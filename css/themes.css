@@ -1,0 +1,99 @@
+/* ==========================================================================
+   themes.css
+   ------------------------------------------------------------------------
+   ملف الألوان (الثيمات) الخاص بالموقع.
+   فكرة العمل: كل الألوان معرّفة كمتغيرات CSS (Custom Properties) داخل
+   الـ :root وتُستخدم في كل ملف style.css، وبذلك عند تغيير الثيم من
+   جافاسكريبت (theme.js) نقوم فقط بتغيير خاصية data-theme على وسم <html>
+   وتتغير كل ألوان الموقع تلقائياً دون الحاجة لإعادة كتابة أي CSS آخر.
+
+   الثيمات المتوفرة حالياً: أخضر (افتراضي) - أزرق - برتقالي - بنفسجي
+   يمكن إضافة أي ثيم جديد بسهولة بنفس الطريقة بالأسفل.
+   ========================================================================== */
+
+/* ===== الثيم الافتراضي: أخضر زمردي (رمز العطاء والنماء) ===== */
+:root,
+html[data-theme="green"] {
+  --primary-color: #12946b;
+  --primary-dark: #0a5c42;
+  --primary-light: #e2f6ee;
+  --accent-color: #e7a13d;
+  --accent-light: #fbecd4;
+  --bg-color: #f6f9f8;
+  --surface-color: #ffffff;
+  --text-color: #1c2b26;
+  --text-muted: #66766f;
+  --border-color: #e1ebe6;
+}
+
+/* ===== ثيم أزرق ملكي (الثقة والأمان) ===== */
+html[data-theme="blue"] {
+  --primary-color: #1a5fc4;
+  --primary-dark: #0e3a80;
+  --primary-light: #e6eefc;
+  --accent-color: #ee8c3d;
+  --accent-light: #fce6d2;
+  --bg-color: #f5f8fc;
+  --surface-color: #ffffff;
+  --text-color: #172033;
+  --text-muted: #5d6b82;
+  --border-color: #e0e7f2;
+}
+
+/* ===== ثيم برتقالي دافئ (الدفء والعطاء) ===== */
+html[data-theme="orange"] {
+  --primary-color: #d9622c;
+  --primary-dark: #93401a;
+  --primary-light: #fbe7da;
+  --accent-color: #1e8f8f;
+  --accent-light: #d6f0ef;
+  --bg-color: #fbf7f3;
+  --surface-color: #ffffff;
+  --text-color: #2b2019;
+  --text-muted: #7a6a5d;
+  --border-color: #f0e0d3;
+}
+
+/* ===== ثيم بنفسجي ملكي (الرقي والعطاء) ===== */
+html[data-theme="purple"] {
+  --primary-color: #6d35c9;
+  --primary-dark: #421e80;
+  --primary-light: #ece1fa;
+  --accent-color: #e7a13d;
+  --accent-light: #fbecd4;
+  --bg-color: #f8f6fb;
+  --surface-color: #ffffff;
+  --text-color: #221a30;
+  --text-muted: #6c6480;
+  --border-color: #e6def4;
+}
+
+/* ===== الوضع الداكن (اختياري) يُفعّل بإضافة data-mode="dark" على <html> ===== */
+html[data-mode="dark"] {
+  --bg-color: #10161a;
+  --surface-color: #182229;
+  --text-color: #eef3f1;
+  --text-muted: #a3b0ac;
+  --border-color: #26333a;
+  --primary-light: #1d3129;
+  --accent-light: #2c2416;
+}
+
+/* ==========================================================================
+   دعم الاتجاه: عربي (RTL) / إنجليزي (LTR)
+   يتم التحكم فيه عبر خاصية dir على وسم <html> من خلال lang.js
+   ========================================================================== */
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+html[dir="ltr"] body {
+  direction: ltr;
+  text-align: left;
+}
+
+/* عناصر يجب أن تبقى بنفس الاتجاه دائماً مثل الأرقام أو الأيقونات المتجهة */
+html[dir="rtl"] .ltr-fixed {
+  direction: ltr;
+  display: inline-block;
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="green">
+<head>
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('hope-theme');
+    if(t){ document.documentElement.setAttribute('data-theme', t); }
+    var l = localStorage.getItem('hope-lang');
+    if(l === 'en'){
+      document.documentElement.setAttribute('lang','en');
+      document.documentElement.setAttribute('dir','ltr');
+    }
+  }catch(e){}
+})();
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>جمعية الأمل الخيرية | مشاريعنا</title>
+<meta name="description" content="تصفح مشاريع جمعية الأمل الخيرية في التعليم والصحة والإغاثة وادعم ما يناسبك" />
+<link rel="stylesheet" href="css/themes.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-info">
+      <span data-i18n="topbar_email">info@charity-example.org</span>
+      <span data-i18n="topbar_phone">+249 000 000 000</span>
+      <span data-i18n="topbar_hours">السبت - الخميس: 9 ص - 5 م</span>
+    </div>
+    <div class="topbar-tools">
+      <div class="theme-swatches" title="تغيير لون الموقع">
+        <button class="swatch" data-theme-value="green" style="background:#12946b" aria-label="أخضر"></button>
+        <button class="swatch" data-theme-value="blue" style="background:#1a5fc4" aria-label="أزرق"></button>
+        <button class="swatch" data-theme-value="orange" style="background:#d9622c" aria-label="برتقالي"></button>
+        <button class="swatch" data-theme-value="purple" style="background:#6d35c9" aria-label="بنفسجي"></button>
+      </div>
+      <button class="lang-switch" type="button" title="تغيير اللغة">🌐 <span class="lang-btn-text">English</span></button>
+    </div>
+  </div>
+</div>
+
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-icon">♥</span><span>جمعية الأمل</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+      <a href="about.html" data-i18n="nav_about">عن الجمعية</a>
+      <a href="projects.html" class="active" data-i18n="nav_projects">مشاريعنا</a>
+      <a href="team.html" data-i18n="nav_team">الفريق والتنسيق</a>
+      <a href="contact.html" data-i18n="nav_contact">تواصل معنا</a>
+      <div id="nav-auth-guest"><a href="login.html" class="nav-cta" data-i18n="nav_login">تسجيل الدخول</a></div>
+      <div id="nav-auth-user" style="display:none;">
+        <span class="user-menu">
+          <span class="avatar">A</span>
+          <span class="user-name"></span>
+          <a href="#" class="logout-link" data-i18n="nav_logout">تسجيل الخروج</a>
+        </span>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<section class="page-header">
+  <div class="container">
+    <h1 data-i18n="projects_header_title">مشاريعنا</h1>
+    <div class="breadcrumb"><a href="index.html" data-i18n="nav_home">الرئيسية</a> / <span data-i18n="nav_projects">مشاريعنا</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="grid grid-3">
+
+      <div class="card">
+        <div class="card-img"><img src="https://loremflickr.com/600/400/children,school/all" alt="كفالة أيتام"></div>
+        <div class="card-body">
+          <span class="tag" data-i18n="proj1_tag">تعليم</span>
+          <h3 data-i18n="proj1_title">كفالة أيتام للتعليم</h3>
+          <p data-i18n="proj1_text">توفير الرسوم الدراسية والأدوات المدرسية لـ 500 طفل يتيم سنوياً</p>
+          <div class="progress"><div class="progress-bar" style="width:65%;"></div></div>
+          <div class="progress-info"><span data-i18n="proj_raised">تم جمعه</span>: 32,500$ / <span data-i18n="proj_target">الهدف</span> 50,000$</div>
+          <a href="contact.html" class="btn btn-primary btn-block btn-sm" data-i18n="proj_btn">ادعم المشروع</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"><img src="https://loremflickr.com/600/400/doctor,medical/all" alt="قوافل طبية"></div>
+        <div class="card-body">
+          <span class="tag" data-i18n="proj2_tag">صحة</span>
+          <h3 data-i18n="proj2_title">قوافل طبية مجانية</h3>
+          <p data-i18n="proj2_text">تنظيم قوافل طبية دورية للمناطق النائية التي تفتقر للخدمات الصحية</p>
+          <div class="progress"><div class="progress-bar" style="width:52%;"></div></div>
+          <div class="progress-info"><span data-i18n="proj_raised">تم جمعه</span>: 21,000$ / <span data-i18n="proj_target">الهدف</span> 40,000$</div>
+          <a href="contact.html" class="btn btn-primary btn-block btn-sm" data-i18n="proj_btn">ادعم المشروع</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"><img src="https://loremflickr.com/600/400/foodbank,volunteer/all" alt="سلال غذائية"></div>
+        <div class="card-body">
+          <span class="tag" data-i18n="proj3_tag">إغاثة</span>
+          <h3 data-i18n="proj3_title">سلال غذائية للأسر المحتاجة</h3>
+          <p data-i18n="proj3_text">توزيع سلال غذائية شهرية على أكثر من 1000 أسرة محتاجة</p>
+          <div class="progress"><div class="progress-bar" style="width:91%;"></div></div>
+          <div class="progress-info"><span data-i18n="proj_raised">تم جمعه</span>: 27,500$ / <span data-i18n="proj_target">الهدف</span> 30,000$</div>
+          <a href="contact.html" class="btn btn-primary btn-block btn-sm" data-i18n="proj_btn">ادعم المشروع</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"><img src="https://loremflickr.com/600/400/school,building/all" alt="بناء مدرسة"></div>
+        <div class="card-body">
+          <span class="tag" data-i18n="proj4_tag">تعليم</span>
+          <h3 data-i18n="proj4_title">بناء مدرسة نموذجية</h3>
+          <p data-i18n="proj4_text">إنشاء مدرسة مجهزة بالكامل تخدم أطفال القرى المحيطة</p>
+          <div class="progress"><div class="progress-bar" style="width:38%;"></div></div>
+          <div class="progress-info"><span data-i18n="proj_raised">تم جمعه</span>: 19,000$ / <span data-i18n="proj_target">الهدف</span> 50,000$</div>
+          <a href="contact.html" class="btn btn-primary btn-block btn-sm" data-i18n="proj_btn">ادعم المشروع</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"><img src="https://loremflickr.com/600/400/hospital,healthcare/all" alt="دعم مرضى"></div>
+        <div class="card-body">
+          <span class="tag" data-i18n="proj5_tag">صحة</span>
+          <h3 data-i18n="proj5_title">دعم مرضى الفشل الكلوي</h3>
+          <p data-i18n="proj5_text">تغطية تكاليف جلسات الغسيل الكلوي للأسر غير القادرة</p>
+          <div class="progress"><div class="progress-bar" style="width:74%;"></div></div>
+          <div class="progress-info"><span data-i18n="proj_raised">تم جمعه</span>: 14,800$ / <span data-i18n="proj_target">الهدف</span> 20,000$</div>
+          <a href="contact.html" class="btn btn-primary btn-block btn-sm" data-i18n="proj_btn">ادعم المشروع</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"><img src="https://loremflickr.com/600/400/refugee,tent/all" alt="مأوى مؤقت"></div>
+        <div class="card-body">
+          <span class="tag" data-i18n="proj6_tag">إغاثة</span>
+          <h3 data-i18n="proj6_title">مأوى مؤقت لمنكوبي الكوارث</h3>
+          <p data-i18n="proj6_text">توفير خيام ومستلزمات إيواء أساسية لضحايا الكوارث الطبيعية</p>
+          <div class="progress"><div class="progress-bar" style="width:47%;"></div></div>
+          <div class="progress-info"><span data-i18n="proj_raised">تم جمعه</span>: 9,400$ / <span data-i18n="proj_target">الهدف</span> 20,000$</div>
+          <a href="contact.html" class="btn btn-primary btn-block btn-sm" data-i18n="proj_btn">ادعم المشروع</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"><img src="https://loremflickr.com/600/400/water,well/all" alt="آبار مياه"></div>
+        <div class="card-body">
+          <span class="tag" data-i18n="proj7_tag">مياه</span>
+          <h3 data-i18n="proj7_title">حفر آبار مياه نظيفة</h3>
+          <p data-i18n="proj7_text">حفر وصيانة آبار مياه نظيفة لتوفير مصدر مياه شرب آمن للقرى النائية</p>
+          <div class="progress"><div class="progress-bar" style="width:46%;"></div></div>
+          <div class="progress-info"><span data-i18n="proj_raised">تم جمعه</span>: 16,200$ / <span data-i18n="proj_target">الهدف</span> 35,000$</div>
+          <a href="contact.html" class="btn btn-primary btn-block btn-sm" data-i18n="proj_btn">ادعم المشروع</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"><img src="https://loremflickr.com/600/400/women,handicraft/all" alt="تمكين المرأة"></div>
+        <div class="card-body">
+          <span class="tag" data-i18n="proj8_tag">تمكين</span>
+          <h3 data-i18n="proj8_title">تمكين المرأة اقتصادياً</h3>
+          <p data-i18n="proj8_text">تدريب النساء المعيلات على حرف مهنية ومنحهن قروضاً صغيرة لبدء مشاريعهن الخاصة</p>
+          <div class="progress"><div class="progress-bar" style="width:45%;"></div></div>
+          <div class="progress-info"><span data-i18n="proj_raised">تم جمعه</span>: 11,300$ / <span data-i18n="proj_target">الهدف</span> 25,000$</div>
+          <a href="contact.html" class="btn btn-primary btn-block btn-sm" data-i18n="proj_btn">ادعم المشروع</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img"><img src="https://loremflickr.com/600/400/winter,clothes/all" alt="كسوة الشتاء"></div>
+        <div class="card-body">
+          <span class="tag" data-i18n="proj9_tag">إغاثة</span>
+          <h3 data-i18n="proj9_title">كسوة الشتاء للأسر المحتاجة</h3>
+          <p data-i18n="proj9_text">توزيع ملابس وبطانيات شتوية دافئة على الأسر الأكثر احتياجاً قبل حلول البرد</p>
+          <div class="progress"><div class="progress-bar" style="width:42%;"></div></div>
+          <div class="progress-info"><span data-i18n="proj_raised">تم جمعه</span>: 7,600$ / <span data-i18n="proj_target">الهدف</span> 18,000$</div>
+          <a href="contact.html" class="btn btn-primary btn-block btn-sm" data-i18n="proj_btn">ادعم المشروع</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-banner">
+      <h2 data-i18n="cta_title">لا تتردد.. كل لحظة تأخير قد تكلف أسرة أملها</h2>
+      <p data-i18n="cta_text">انضم إلى مجتمع الداعمين وكن جزءاً من قصص النجاح القادمة</p>
+      <a href="contact.html" class="btn btn-outline" data-i18n="cta_btn">تبرّع الآن</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><span class="brand-icon">♥</span><span data-i18n="footer_about_title">جمعية الأمل الخيرية</span></div>
+        <p class="footer-desc" data-i18n="footer_about_text">منظمة خيرية غير ربحية تعمل على تحسين حياة الأسر المحتاجة.</p>
+        <div class="footer-social"><a href="#">f</a><a href="#">X</a><a href="#">ig</a><a href="#">▶</a></div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_links_title">روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">الرئيسية</a></li>
+          <li><a href="about.html" data-i18n="nav_about">عن الجمعية</a></li>
+          <li><a href="projects.html" data-i18n="nav_projects">مشاريعنا</a></li>
+          <li><a href="team.html" data-i18n="nav_team">الفريق والتنسيق</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_contact_title">تواصل معنا</h4>
+        <ul class="footer-contact">
+          <li>📍 <span data-i18n="contact_addr_text">الخرطوم، السودان - شارع النيل</span></li>
+          <li>📞 <span data-i18n="topbar_phone">+249 000 000 000</span></li>
+          <li>✉️ <span data-i18n="topbar_email">info@charity-example.org</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_newsletter_title">النشرة البريدية</h4>
+        <p class="footer-desc" data-i18n="footer_newsletter_text">اشترك ليصلك كل جديد عن مشاريعنا وأنشطتنا</p>
+        <form class="form-group" style="display:flex; gap:8px;" onsubmit="event.preventDefault(); showToast(getLang()==='ar'?'تم الاشتراك بنجاح':'Subscribed successfully');">
+          <input type="email" class="form-control" required data-i18n-placeholder="footer_newsletter_placeholder" placeholder="بريدك الإلكتروني" style="background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.2); color:#fff;">
+          <button type="submit" class="btn btn-accent btn-sm" data-i18n="footer_newsletter_btn">اشترك</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="current-year">2026</span> <span data-i18n="footer_about_title">جمعية الأمل الخيرية</span> — <span data-i18n="footer_rights">جميع الحقوق محفوظة</span></div>
+      <div class="footer-bottom-links">
+        <a href="#" data-i18n="footer_privacy">سياسة الخصوصية</a>
+        <a href="#" data-i18n="footer_terms">الشروط والأحكام</a>
+      </div>
+    </div>
+    <div style="text-align:center; padding-bottom:16px; font-size:.78rem; opacity:.6;" data-i18n="footer_credit">تصميم وتطوير فريق جمعية الأمل</div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="العودة للأعلى">↑</button>
+
+<script src="js/lang.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

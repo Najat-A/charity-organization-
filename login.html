@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="green">
+<head>
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('hope-theme');
+    if(t){ document.documentElement.setAttribute('data-theme', t); }
+    var l = localStorage.getItem('hope-lang');
+    if(l === 'en'){
+      document.documentElement.setAttribute('lang','en');
+      document.documentElement.setAttribute('dir','ltr');
+    }
+  }catch(e){}
+})();
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>جمعية الأمل الخيرية | تسجيل الدخول</title>
+<meta name="description" content="سجّل الدخول إلى حسابك في جمعية الأمل الخيرية أو أنشئ حساباً جديداً" />
+<link rel="stylesheet" href="css/themes.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-info">
+      <span data-i18n="topbar_email">info@charity-example.org</span>
+      <span data-i18n="topbar_phone">+249 000 000 000</span>
+      <span data-i18n="topbar_hours">السبت - الخميس: 9 ص - 5 م</span>
+    </div>
+    <div class="topbar-tools">
+      <div class="theme-swatches" title="تغيير لون الموقع">
+        <button class="swatch" data-theme-value="green" style="background:#12946b" aria-label="أخضر"></button>
+        <button class="swatch" data-theme-value="blue" style="background:#1a5fc4" aria-label="أزرق"></button>
+        <button class="swatch" data-theme-value="orange" style="background:#d9622c" aria-label="برتقالي"></button>
+        <button class="swatch" data-theme-value="purple" style="background:#6d35c9" aria-label="بنفسجي"></button>
+      </div>
+      <button class="lang-switch" type="button" title="تغيير اللغة">🌐 <span class="lang-btn-text">English</span></button>
+    </div>
+  </div>
+</div>
+
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-icon">♥</span><span>جمعية الأمل</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+      <a href="about.html" data-i18n="nav_about">عن الجمعية</a>
+      <a href="projects.html" data-i18n="nav_projects">مشاريعنا</a>
+      <a href="team.html" data-i18n="nav_team">الفريق والتنسيق</a>
+      <a href="contact.html" data-i18n="nav_contact">تواصل معنا</a>
+      <div id="nav-auth-guest"><a href="login.html" class="nav-cta active" data-i18n="nav_login">تسجيل الدخول</a></div>
+      <div id="nav-auth-user" style="display:none;">
+        <span class="user-menu">
+          <span class="avatar">A</span>
+          <span class="user-name"></span>
+          <a href="#" class="logout-link" data-i18n="nav_logout">تسجيل الخروج</a>
+        </span>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<section class="auth-page">
+  <div class="auth-box">
+
+    <!-- ============ حالة: مستخدم مسجّل دخوله بالفعل ============ -->
+    <!-- تظهر هذه البطاقة تلقائياً بدل نماذج الدخول عندما يكتشف
+         php/check_session.php أن هناك جلسة (Session) نشطة بالفعل -->
+    <div id="auth-logged-in" class="form-wrapper" style="display:none; text-align:center;">
+      <div class="team-avatar" style="margin:0 auto 18px;">✓</div>
+      <h2 style="color:var(--primary-dark);" data-i18n="welcome_back">مرحباً بعودتك</h2>
+      <p style="color:var(--text-muted); margin:10px 0 24px;">
+        <span data-i18n="logged_in_as">أنت مسجل الدخول باسم</span>: <strong class="welcome-name"></strong>
+      </p>
+      <a href="index.html" class="btn btn-primary btn-block" style="margin-bottom:12px;" data-i18n="go_home">العودة للرئيسية</a>
+      <a href="#" class="btn btn-outline btn-block logout-link" style="border-color:var(--border-color); color:var(--text-color);" data-i18n="btn_logout_full">تسجيل الخروج</a>
+    </div>
+
+    <!-- ============ حالة: زائر (نماذج الدخول / إنشاء حساب) ============ -->
+    <div id="auth-guest-forms">
+      <div class="auth-tabs">
+        <div class="auth-tab active" data-target="login-panel" data-i18n="tab_login">تسجيل الدخول</div>
+        <div class="auth-tab" data-target="register-panel" data-i18n="tab_register">حساب جديد</div>
+      </div>
+
+      <div class="form-wrapper">
+
+        <!-- -------- لوحة تسجيل الدخول -------- -->
+        <div id="login-panel" class="auth-panel active">
+          <h2 style="color:var(--primary-dark); margin-bottom:6px;" data-i18n="login_header_title">تسجيل الدخول</h2>
+          <p style="color:var(--text-muted); font-size:.82rem; margin-bottom:22px;" data-i18n="login_demo_hint">بيانات تجريبية: admin / admin123</p>
+
+          <!-- يُرسل عبر AJAX إلى php/login_process.php الذي يتحقق من
+               قاعدة البيانات وينشئ Session عند نجاح الدخول -->
+          <form id="login-form" novalidate>
+            <div class="form-group">
+              <label for="l-username" data-i18n="label_username">اسم المستخدم أو البريد الإلكتروني</label>
+              <input type="text" id="l-username" name="username" class="form-control" required data-i18n-placeholder="placeholder_username" placeholder="أدخل اسم المستخدم أو البريد">
+              <span class="error-msg" data-i18n="login_error">اسم المستخدم أو كلمة المرور غير صحيحة.</span>
+            </div>
+            <div class="form-group">
+              <label for="l-password" data-i18n="label_password">كلمة المرور</label>
+              <input type="password" id="l-password" name="password" class="form-control" required data-i18n-placeholder="placeholder_password" placeholder="••••••••">
+              <span class="error-msg" data-i18n="login_error">اسم المستخدم أو كلمة المرور غير صحيحة.</span>
+            </div>
+            <div class="form-group" style="display:flex; justify-content:space-between; align-items:center;">
+              <label class="form-check" style="margin:0;">
+                <input type="checkbox" name="remember"> <span data-i18n="remember_me">تذكرني</span>
+              </label>
+              <a href="#" style="font-size:.85rem; color:var(--primary-color); font-weight:700;" data-i18n="forgot_password">نسيت كلمة المرور؟</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" data-i18n="btn_login">دخول</button>
+          </form>
+
+          <div class="form-footer-link">
+            <span data-i18n="login_footer_text">ليس لديك حساب؟</span>
+            <a href="#" class="switch-to-register" data-i18n="login_footer_link">أنشئ حساباً الآن</a>
+          </div>
+        </div>
+
+        <!-- -------- لوحة إنشاء حساب جديد -------- -->
+        <div id="register-panel" class="auth-panel">
+          <h2 style="color:var(--primary-dark); margin-bottom:22px;" data-i18n="tab_register">حساب جديد</h2>
+
+          <!-- يُرسل عبر AJAX إلى php/register_process.php الذي يتحقق من
+               عدم تكرار البريد ثم يشفّر كلمة المرور بـ password_hash() -->
+          <form id="register-form" novalidate>
+            <div class="form-group">
+              <label for="r-name" data-i18n="label_name">الاسم الكامل</label>
+              <input type="text" id="r-name" name="full_name" class="form-control" required minlength="3" data-i18n-placeholder="placeholder_name" placeholder="أدخل اسمك الكامل">
+            </div>
+            <div class="form-group">
+              <label for="r-email" data-i18n="label_email">البريد الإلكتروني</label>
+              <input type="email" id="r-email" name="email" class="form-control" required data-i18n-placeholder="placeholder_email" placeholder="example@email.com">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="r-password" data-i18n="label_password">كلمة المرور</label>
+                <input type="password" id="r-password" name="password" class="form-control" required minlength="6" data-i18n-placeholder="placeholder_password" placeholder="••••••••">
+              </div>
+              <div class="form-group">
+                <label for="r-confirm" data-i18n="label_confirm_password">تأكيد كلمة المرور</label>
+                <input type="password" id="r-confirm" name="confirm_password" class="form-control" required minlength="6" data-i18n-placeholder="placeholder_password" placeholder="••••••••">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" data-i18n="btn_register">إنشاء الحساب</button>
+          </form>
+
+          <div class="form-footer-link">
+            <span data-i18n="register_footer_text">لديك حساب بالفعل؟</span>
+            <a href="#" class="switch-to-login" data-i18n="register_footer_link">سجّل الدخول</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer" style="margin-top:0;">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <div>© <span id="current-year">2026</span> <span data-i18n="footer_about_title">جمعية الأمل الخيرية</span> — <span data-i18n="footer_rights">جميع الحقوق محفوظة</span></div>
+      <div class="footer-bottom-links">
+        <a href="#" data-i18n="footer_privacy">سياسة الخصوصية</a>
+        <a href="#" data-i18n="footer_terms">الشروط والأحكام</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/lang.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // ربط رابطي "أنشئ حساباً الآن" و "سجّل الدخول" داخل النموذج بالتبويبات نفسها
+  document.addEventListener("DOMContentLoaded", () => {
+    const switchToRegister = document.querySelector(".switch-to-register");
+    const switchToLogin = document.querySelector(".switch-to-login");
+    if (switchToRegister) {
+      switchToRegister.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector('.auth-tab[data-target="register-panel"]').click();
+      });
+    }
+    if (switchToLogin) {
+      switchToLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector('.auth-tab[data-target="login-panel"]').click();
+      });
+    }
+  });
+</script>
+</body>
+</html>

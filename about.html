@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="green">
+<head>
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('hope-theme');
+    if(t){ document.documentElement.setAttribute('data-theme', t); }
+    var l = localStorage.getItem('hope-lang');
+    if(l === 'en'){
+      document.documentElement.setAttribute('lang','en');
+      document.documentElement.setAttribute('dir','ltr');
+    }
+  }catch(e){}
+})();
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>جمعية الأمل الخيرية | عن الجمعية</title>
+<meta name="description" content="تعرّف على قصة جمعية الأمل الخيرية، رسالتنا ورؤيتنا وقيمنا" />
+<link rel="stylesheet" href="css/themes.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-info">
+      <span data-i18n="topbar_email">info@charity-example.org</span>
+      <span data-i18n="topbar_phone">+249 000 000 000</span>
+      <span data-i18n="topbar_hours">السبت - الخميس: 9 ص - 5 م</span>
+    </div>
+    <div class="topbar-tools">
+      <div class="theme-swatches" title="تغيير لون الموقع">
+        <button class="swatch" data-theme-value="green" style="background:#12946b" aria-label="أخضر"></button>
+        <button class="swatch" data-theme-value="blue" style="background:#1a5fc4" aria-label="أزرق"></button>
+        <button class="swatch" data-theme-value="orange" style="background:#d9622c" aria-label="برتقالي"></button>
+        <button class="swatch" data-theme-value="purple" style="background:#6d35c9" aria-label="بنفسجي"></button>
+      </div>
+      <button class="lang-switch" type="button" title="تغيير اللغة">
+        🌐 <span class="lang-btn-text">English</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-icon">♥</span>
+      <span>جمعية الأمل</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+      <a href="about.html" class="active" data-i18n="nav_about">عن الجمعية</a>
+      <a href="projects.html" data-i18n="nav_projects">مشاريعنا</a>
+      <a href="team.html" data-i18n="nav_team">الفريق والتنسيق</a>
+      <a href="contact.html" data-i18n="nav_contact">تواصل معنا</a>
+      <div id="nav-auth-guest">
+        <a href="login.html" class="nav-cta" data-i18n="nav_login">تسجيل الدخول</a>
+      </div>
+      <div id="nav-auth-user" style="display:none;">
+        <span class="user-menu">
+          <span class="avatar">A</span>
+          <span class="user-name"></span>
+          <a href="#" class="logout-link" data-i18n="nav_logout">تسجيل الخروج</a>
+        </span>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<section class="page-header">
+  <div class="container">
+    <h1 data-i18n="about_header_title">عن جمعية الأمل الخيرية</h1>
+    <div class="breadcrumb"><a href="index.html" data-i18n="nav_home">الرئيسية</a> / <span data-i18n="nav_about">عن الجمعية</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="container grid grid-2" style="align-items:center;">
+    <div>
+      <span class="tag" data-i18n="about_story_tag">قصتنا</span>
+      <h2 style="color:var(--primary-dark); font-size:1.9rem; margin:14px 0 18px;" data-i18n="about_story_title">رحلة عطاء بدأت من إيمان بسيط</h2>
+      <p style="color:var(--text-muted); margin-bottom:16px;" data-i18n="about_story_p1">انطلقت الجمعية من مجموعة صغيرة من المتطوعين الذين آمنوا بأن التغيير يبدأ بخطوة.</p>
+      <p style="color:var(--text-muted);" data-i18n="about_story_p2">نحرص في كل خطوة على الشفافية الكاملة في إدارة التبرعات، ونشر تقارير دورية توضح للمتبرعين أثر كل مساهمة قدموها.</p>
+    </div>
+    <div class="grid grid-2" style="gap:16px;">
+      <div class="card"><div class="card-img" style="height:150px;"><img src="https://loremflickr.com/300/150/volunteers,teamwork/all" alt="فريق العمل"></div></div>
+      <div class="card" style="margin-top:24px;"><div class="card-img" style="height:150px;"><img src="https://loremflickr.com/300/150/children,smile/all" alt="نمو وتطور"></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--primary-light);">
+  <div class="container grid grid-3">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-img" style="height:70px; border-radius:12px; margin-bottom:14px; font-size:1.8rem;">🎯</div>
+        <h3 data-i18n="mission_title">رسالتنا</h3>
+        <p data-i18n="mission_text">تقديم الدعم المستدام للفئات الأكثر احتياجاً عبر برامج تنموية وإغاثية شفافة وفعالة.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="card-img" style="height:70px; border-radius:12px; margin-bottom:14px; font-size:1.8rem;">🔭</div>
+        <h3 data-i18n="vision_title">رؤيتنا</h3>
+        <p data-i18n="vision_text">مجتمع خالٍ من الفقر والحاجة، يسوده التكافل والعطاء المستمر بين أفراده.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="card-img" style="height:70px; border-radius:12px; margin-bottom:14px; font-size:1.8rem;">💎</div>
+        <h3 data-i18n="values_title">قيمنا</h3>
+        <p data-i18n="values_text">الشفافية - الأمانة - الاحترافية - احترام كرامة المستفيدين في كل برامجنا.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <span class="tag" data-i18n="about_gallery_tag">لمحة</span>
+      <h2 data-i18n="about_gallery_title">أبرز إنجازاتنا خلال السنوات الماضية</h2>
+    </div>
+    <div class="stats-grid" style="box-shadow:none; border:1px solid var(--border-color);">
+      <div class="stat-card"><div class="num" data-count="12500">0</div><div class="label" data-i18n="stats_beneficiaries">مستفيد ومستفيدة</div></div>
+      <div class="stat-card"><div class="num" data-count="850">0</div><div class="label" data-i18n="stats_volunteers">متطوع نشط</div></div>
+      <div class="stat-card"><div class="num" data-count="120">0</div><div class="label" data-i18n="stats_projects">مشروع منجز</div></div>
+      <div class="stat-card"><div class="num" data-count="9">0</div><div class="label" data-i18n="stats_years">سنة من العطاء</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><span class="brand-icon">♥</span><span data-i18n="footer_about_title">جمعية الأمل الخيرية</span></div>
+        <p class="footer-desc" data-i18n="footer_about_text">منظمة خيرية غير ربحية تعمل على تحسين حياة الأسر المحتاجة.</p>
+        <div class="footer-social">
+          <a href="#">f</a><a href="#">X</a><a href="#">ig</a><a href="#">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_links_title">روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">الرئيسية</a></li>
+          <li><a href="about.html" data-i18n="nav_about">عن الجمعية</a></li>
+          <li><a href="projects.html" data-i18n="nav_projects">مشاريعنا</a></li>
+          <li><a href="team.html" data-i18n="nav_team">الفريق والتنسيق</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_contact_title">تواصل معنا</h4>
+        <ul class="footer-contact">
+          <li>📍 <span data-i18n="contact_addr_text">الخرطوم، السودان - شارع النيل</span></li>
+          <li>📞 <span data-i18n="topbar_phone">+249 000 000 000</span></li>
+          <li>✉️ <span data-i18n="topbar_email">info@charity-example.org</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_newsletter_title">النشرة البريدية</h4>
+        <p class="footer-desc" data-i18n="footer_newsletter_text">اشترك ليصلك كل جديد عن مشاريعنا وأنشطتنا</p>
+        <form class="form-group" style="display:flex; gap:8px;" onsubmit="event.preventDefault(); showToast(getLang()==='ar'?'تم الاشتراك بنجاح':'Subscribed successfully');">
+          <input type="email" class="form-control" required data-i18n-placeholder="footer_newsletter_placeholder" placeholder="بريدك الإلكتروني" style="background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.2); color:#fff;">
+          <button type="submit" class="btn btn-accent btn-sm" data-i18n="footer_newsletter_btn">اشترك</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="current-year">2026</span> <span data-i18n="footer_about_title">جمعية الأمل الخيرية</span> — <span data-i18n="footer_rights">جميع الحقوق محفوظة</span></div>
+      <div class="footer-bottom-links">
+        <a href="#" data-i18n="footer_privacy">سياسة الخصوصية</a>
+        <a href="#" data-i18n="footer_terms">الشروط والأحكام</a>
+      </div>
+    </div>
+    <div style="text-align:center; padding-bottom:16px; font-size:.78rem; opacity:.6;" data-i18n="footer_credit">تصميم وتطوير فريق جمعية الأمل</div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="العودة للأعلى">↑</button>
+
+<script src="js/lang.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

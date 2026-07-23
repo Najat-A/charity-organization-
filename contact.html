@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="green">
+<head>
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('hope-theme');
+    if(t){ document.documentElement.setAttribute('data-theme', t); }
+    var l = localStorage.getItem('hope-lang');
+    if(l === 'en'){
+      document.documentElement.setAttribute('lang','en');
+      document.documentElement.setAttribute('dir','ltr');
+    }
+  }catch(e){}
+})();
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>جمعية الأمل الخيرية | تواصل معنا</title>
+<meta name="description" content="تواصل مع فريق جمعية الأمل الخيرية لأي استفسار أو اقتراح أو شراكة" />
+<link rel="stylesheet" href="css/themes.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-info">
+      <span data-i18n="topbar_email">info@charity-example.org</span>
+      <span data-i18n="topbar_phone">+249 000 000 000</span>
+      <span data-i18n="topbar_hours">السبت - الخميس: 9 ص - 5 م</span>
+    </div>
+    <div class="topbar-tools">
+      <div class="theme-swatches" title="تغيير لون الموقع">
+        <button class="swatch" data-theme-value="green" style="background:#12946b" aria-label="أخضر"></button>
+        <button class="swatch" data-theme-value="blue" style="background:#1a5fc4" aria-label="أزرق"></button>
+        <button class="swatch" data-theme-value="orange" style="background:#d9622c" aria-label="برتقالي"></button>
+        <button class="swatch" data-theme-value="purple" style="background:#6d35c9" aria-label="بنفسجي"></button>
+      </div>
+      <button class="lang-switch" type="button" title="تغيير اللغة">🌐 <span class="lang-btn-text">English</span></button>
+    </div>
+  </div>
+</div>
+
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-icon">♥</span><span>جمعية الأمل</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+      <a href="about.html" data-i18n="nav_about">عن الجمعية</a>
+      <a href="projects.html" data-i18n="nav_projects">مشاريعنا</a>
+      <a href="team.html" data-i18n="nav_team">الفريق والتنسيق</a>
+      <a href="contact.html" class="active" data-i18n="nav_contact">تواصل معنا</a>
+      <div id="nav-auth-guest"><a href="login.html" class="nav-cta" data-i18n="nav_login">تسجيل الدخول</a></div>
+      <div id="nav-auth-user" style="display:none;">
+        <span class="user-menu">
+          <span class="avatar">A</span>
+          <span class="user-name"></span>
+          <a href="#" class="logout-link" data-i18n="nav_logout">تسجيل الخروج</a>
+        </span>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<section class="page-header">
+  <div class="container">
+    <h1 data-i18n="contact_header_title">تواصل معنا</h1>
+    <div class="breadcrumb"><a href="index.html" data-i18n="nav_home">الرئيسية</a> / <span data-i18n="nav_contact">تواصل معنا</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <span class="tag" data-i18n="contact_tag">نحن هنا للاستماع إليك</span>
+      <h2 data-i18n="contact_title">تواصل مع فريق جمعية الأمل</h2>
+      <p data-i18n="contact_text">يسعدنا تواصلكم معنا لأي استفسار أو اقتراح أو لبدء شراكة معنا</p>
+    </div>
+
+    <div class="grid grid-2" style="align-items:start; gap:40px;">
+
+      <!-- عمود معلومات التواصل -->
+      <div>
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="icon">📍</div>
+            <div>
+              <h4 data-i18n="contact_addr_title">العنوان</h4>
+              <p data-i18n="contact_addr_text">الخرطوم، السودان - شارع النيل</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">📞</div>
+            <div>
+              <h4 data-i18n="contact_phone_title">الهاتف</h4>
+              <p data-i18n="topbar_phone">+249 000 000 000</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">✉️</div>
+            <div>
+              <h4 data-i18n="contact_email_title">البريد الإلكتروني</h4>
+              <p data-i18n="topbar_email">info@charity-example.org</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">🕐</div>
+            <div>
+              <h4 data-i18n="contact_hours_title">ساعات العمل</h4>
+              <p data-i18n="contact_hours_text">السبت - الخميس: 9 صباحاً - 5 مساءً</p>
+            </div>
+          </div>
+        </div>
+        <div class="map-frame" style="margin-top:20px;">
+          <span data-i18n="map_placeholder">خريطة الموقع (يمكن استبدالها بخريطة Google حقيقية)</span>
+        </div>
+      </div>
+
+      <!-- عمود نموذج التواصل -->
+      <div class="form-wrapper">
+        <h3 style="color:var(--primary-dark); margin-bottom:6px;" data-i18n="contact_form_title">أرسل لنا رسالة</h3>
+        <p style="color:var(--text-muted); font-size:.88rem; margin-bottom:22px;" data-i18n="contact_form_text">سيقوم فريقنا بالرد عليك خلال 24 ساعة</p>
+
+        <!-- ملاحظة: هذا النموذج يُرسل عبر AJAX (fetch) بواسطة js/main.js
+             إلى ملف php/contact_process.php الذي يتحقق من البيانات في جهة
+             الخادم ويخزنها في جدول messages بقاعدة البيانات -->
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name" data-i18n="label_name">الاسم الكامل</label>
+              <input type="text" id="c-name" name="full_name" class="form-control" required minlength="3" data-i18n-placeholder="placeholder_name" placeholder="أدخل اسمك الكامل">
+              <span class="error-msg" data-i18n="contact_error">الرجاء التحقق من الحقول قبل الإرسال.</span>
+            </div>
+            <div class="form-group">
+              <label for="c-email" data-i18n="label_email">البريد الإلكتروني</label>
+              <input type="email" id="c-email" name="email" class="form-control" required data-i18n-placeholder="placeholder_email" placeholder="example@email.com">
+              <span class="error-msg" data-i18n="contact_error">الرجاء التحقق من الحقول قبل الإرسال.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-phone" data-i18n="label_phone">رقم الهاتف</label>
+              <input type="tel" id="c-phone" name="phone" class="form-control" data-i18n-placeholder="placeholder_phone" placeholder="+249xxxxxxxxx">
+            </div>
+            <div class="form-group">
+              <label for="c-subject" data-i18n="label_subject">الموضوع</label>
+              <input type="text" id="c-subject" name="subject" class="form-control" data-i18n-placeholder="placeholder_subject" placeholder="موضوع رسالتك">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-message" data-i18n="label_message">نص الرسالة</label>
+            <textarea id="c-message" name="message" class="form-control" required minlength="10" data-i18n-placeholder="placeholder_message" placeholder="اكتب رسالتك هنا بالتفصيل..."></textarea>
+            <span class="error-msg" data-i18n="contact_error">الرجاء التحقق من الحقول قبل الإرسال.</span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="btn_send">إرسال الرسالة</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><span class="brand-icon">♥</span><span data-i18n="footer_about_title">جمعية الأمل الخيرية</span></div>
+        <p class="footer-desc" data-i18n="footer_about_text">منظمة خيرية غير ربحية تعمل على تحسين حياة الأسر المحتاجة.</p>
+        <div class="footer-social"><a href="#">f</a><a href="#">X</a><a href="#">ig</a><a href="#">▶</a></div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_links_title">روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">الرئيسية</a></li>
+          <li><a href="about.html" data-i18n="nav_about">عن الجمعية</a></li>
+          <li><a href="projects.html" data-i18n="nav_projects">مشاريعنا</a></li>
+          <li><a href="team.html" data-i18n="nav_team">الفريق والتنسيق</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_contact_title">تواصل معنا</h4>
+        <ul class="footer-contact">
+          <li>📍 <span data-i18n="contact_addr_text">الخرطوم، السودان - شارع النيل</span></li>
+          <li>📞 <span data-i18n="topbar_phone">+249 000 000 000</span></li>
+          <li>✉️ <span data-i18n="topbar_email">info@charity-example.org</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_newsletter_title">النشرة البريدية</h4>
+        <p class="footer-desc" data-i18n="footer_newsletter_text">اشترك ليصلك كل جديد عن مشاريعنا وأنشطتنا</p>
+        <form class="form-group" style="display:flex; gap:8px;" onsubmit="event.preventDefault(); showToast(getLang()==='ar'?'تم الاشتراك بنجاح':'Subscribed successfully');">
+          <input type="email" class="form-control" required data-i18n-placeholder="footer_newsletter_placeholder" placeholder="بريدك الإلكتروني" style="background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.2); color:#fff;">
+          <button type="submit" class="btn btn-accent btn-sm" data-i18n="footer_newsletter_btn">اشترك</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="current-year">2026</span> <span data-i18n="footer_about_title">جمعية الأمل الخيرية</span> — <span data-i18n="footer_rights">جميع الحقوق محفوظة</span></div>
+      <div class="footer-bottom-links">
+        <a href="#" data-i18n="footer_privacy">سياسة الخصوصية</a>
+        <a href="#" data-i18n="footer_terms">الشروط والأحكام</a>
+      </div>
+    </div>
+    <div style="text-align:center; padding-bottom:16px; font-size:.78rem; opacity:.6;" data-i18n="footer_credit">تصميم وتطوير فريق جمعية الأمل</div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="العودة للأعلى">↑</button>
+
+<script src="js/lang.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
